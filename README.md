@@ -20,15 +20,13 @@ To set up your system for the movie genre classification project, follow these s
 ### Example Usage
 To classify a movie genre, you can use curl to send a POST request:
 ```
-curl -X POST http://127.0.0.1:5000/classify \
--H "Content-Type: application/json" \
--d '{"description": "A young wizard embarks on an adventure to defeat a dark sorcerer."}'
+curl -X POST http://127.0.0.1:5000/classify -H "Content-Type: application/json" -d "{\"description\": \"An ugly duckling having undergone a remarkable change, still harbors feelings for her crush: a carefree playboy, but not before his business-focused brother has something to say about it.\"}"
 ```
 Response Format
 The API will return a JSON response containing the list of genres:
 ```
 {
-  "genres": ["Fantasy", "Adventure", "Action"]
+  "genres":"[Comedy,Romance]"
 }
 ```
 ## Discussion
@@ -78,3 +76,6 @@ To enhance the performance of the current movie genre classification system, sev
    - Adding functionality for the model to search online databases (e.g., IMDb, Rotten Tomatoes) for real-time information about movies would ensure accuracy in genre classification by providing up-to-date data and context.
 3. Expanded User Input Options:
    - Implementing a feature that allows the system to automatically classify any user input, no matter it’s a title, production company name, or user review. The model would analyze the nature of the text provided and estimate relevant genres based on its understanding of context and relationships within the input.
+4. Enhance Output Sanitization:
+   - Fine-tune the model to restrict its outputs to a specific format, ensuring consistency and clarity in responses. Implement mechanisms to prevent users from bypassing predefined prompts, thereby maintaining the integrity of the interaction and ensuring that the model adheres to established guidelines and standards.
+
